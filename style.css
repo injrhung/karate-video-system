@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: #e0e0e0; /* 整體背景可調淡灰或深灰 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.header {
+  width: 80%;
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(to bottom, #d6eaff, #83b8f4);
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #001152;
+}
+
+.subheader {
+  font-size: 0.9em;
+  color: #3a3a3a;
+  margin-top: -10px;
+}
+
+.video-area {
+  width: 80%;
+  height: 400px;
+  background: #3d3d3d;
+  margin-top: 10px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 20px;
+  background: linear-gradient(to top, #d6eaff, #83b8f4);
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  background: #f1f1f1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+.btn.upload, 
+.btn.record, 
+.btn.stop{
+   border-radius: 25px;
+  padding: 0 12px;
+  height: 50px;
+  font-size: 14px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* icon 與文字的間距 */
+}
+
+
+.btn.record .material-icons {
+  color: #A81C1C;
+  font-size: 20px;
+}
+
+
+/* 其他所有按鈕 - 深灰 #424242 */
+.btn.stop .material-icons,
+.btn.upload .material-icons,
+.btn.search .material-icons,
+.btn.size {
+  color: #424242;
+}
+
+/* 讀入影片按鈕的 icon 也變色 */
+.btn.upload .material-icons {
+  margin-right: 5px;
+}
+
+/* hover 效果（可選） */
+.btn:hover,
+.btn.size:hover {
+  background: #ddd;
+}
+
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  pointer-events: none; /* 避免 hover 影響點擊 */
+}
+
+.video-area {
+  background: #3d3d3d;
+  margin-top: 10px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.video-area.s {
+  width: 640px;
+  height: 480px;
+}
+
+.video-area.m {
+  width: 800px;
+  height: 600px;
+}
+
+.video-area.l {
+  width: 1280px;
+  height: 960px;
+}
+
+.btn .material-icons {
+  font-size: 20px;
+}
