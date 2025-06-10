@@ -11,7 +11,12 @@
   <!-- <div class="subheader">Karate video recording and playback system</div> -->
 <div class="main">
     <!-- 視訊顯示區 -->
-     <div class="video-area l" id="videoArea"></div>
+     <div class="video-area m" id="videoArea">
+        <video id="player" controls>
+          <source src="video/testvideo.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
+     </div>
 
         <!-- 控制按鈕 -->
     <div class="controls">
@@ -30,13 +35,13 @@
 
     <div class="btn-group">
         <button class="btn scale-btn">
-            <img src="icons/0.svg" alt="縮放" class="icon-svg">
+            <img src="icons/0.svg" alt="縮放" class="icon-svg">局部放大
         </button>
         <button class="btn size-btn" data-size="s">
             <img src="icons/s.svg" alt="小尺寸" class="icon-svg">
         </button>
-        <button class="btn size-btn" data-size="m">
-            <img src="icons/m.svg" alt="中尺寸" class="icon-svg">
+        <button class="btn size-btn active" data-size="m">
+          <img src="icons/m.svg" alt="中尺寸" class="icon-svg">
         </button>
         <button class="btn size-btn" data-size="l">
             <img src="icons/l.svg" alt="大尺寸" class="icon-svg">
@@ -45,7 +50,8 @@
 </div>
 </div>
 
-  <!-- 尺寸切換 Script -->
+
+
   <script>
     const videoArea = document.getElementById("videoArea");
     const sizeButtons = document.querySelectorAll(".size-btn");
@@ -53,10 +59,18 @@
     sizeButtons.forEach(button => {
       button.addEventListener("click", () => {
         const size = button.getAttribute("data-size");
+
+        // 切換尺寸
         videoArea.classList.remove("s", "m", "l");
         videoArea.classList.add(size);
+
+        // 切換 active 樣式
+        sizeButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
       });
     });
+
+  
   </script>
 </body>
 </html>
